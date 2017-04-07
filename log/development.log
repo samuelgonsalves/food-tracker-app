@@ -4256,3 +4256,834 @@ puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
   Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
   Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 11:51:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.7ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (45.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (128.2ms)
+Completed 200 OK in 553ms (Views: 450.1ms | ActiveRecord: 57.3ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 11:51:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (11.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 11:52:07 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.7ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (food_item::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_food_item_timestamptz_interval_0_second_at_time_ FROM "food_infos" WHERE (food_item IS NOT NULL) GROUP BY (DATE_TRUNC('day', (food_item::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  Rendered food_info/show.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (PG::InvalidDatetimeFormat: ERROR:  invalid input syntax for type timestamp with time zone: "Shake"
+: SELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (food_item::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_food_item_timestamptz_interval_0_second_at_time_ FROM "food_infos" WHERE (food_item IS NOT NULL) GROUP BY (DATE_TRUNC('day', (food_item::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'):
+    45: 
+    46: <%= FoodInfo.group_by_day(:created_at).count %>
+    47: 
+    48: <%= display_calorie_chart %>
+    49: 
+    50: <%= display_carb_chart %>
+    51: 
+  
+app/helpers/food_info_helper.rb:3:in `display_calorie_chart'
+app/views/food_info/show.html.erb:48:in `_app_views_food_info_show_html_erb___1099115585474746320_69849468643620'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 11:54:06 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  Rendered food_info/show.html.erb within layouts/application (27.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `group_by_date' for #<Class:0x007f0e3077b9c0>
+Did you mean?  group_by_day
+               group_by_quarter
+               group_by_year
+               group_by_minute
+               group_by_week
+               group_by_month
+               group_by_hour):
+    45: 
+    46: <%= FoodInfo.group_by_day(:created_at).count %>
+    47: 
+    48: <%= display_group_date_chart %>
+    49: 
+    50: <%= display_calorie_chart %>
+    51: 
+  
+app/helpers/food_info_helper.rb:15:in `display_group_date_chart'
+app/views/food_info/show.html.erb:48:in `_app_views_food_info_show_html_erb___1099115585474746320_47277653134280'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 11:54:18 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 39ms (Views: 27.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 11:54:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.2ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:01:49 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 36ms (Views: 29.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:01:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (10.8ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:05:16 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.5ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:05:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.8ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:19:26 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 44ms (Views: 33.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:19:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:26:50 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 42ms (Views: 31.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:26:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.6ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:27:18 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 46ms (Views: 35.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:27:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (12.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:27:32 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:27:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:29:08 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 49ms (Views: 35.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:29:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.8ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:31:55 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 39ms (Views: 31.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:31:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.3ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:32:31 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 39ms (Views: 31.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:32:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.2ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:33:02 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 41ms (Views: 32.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:33:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:33:20 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 52ms (Views: 40.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:33:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.1ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-07 12:34:26 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (1.0ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC' AS date_trunc_day_created_at_timestamptz_interval_0_second_at_time FROM "food_infos" WHERE (created_at IS NOT NULL) GROUP BY (DATE_TRUNC('day', (created_at::timestamptz - INTERVAL '0 second') AT TIME ZONE 'Etc/UTC') + INTERVAL '0 second') AT TIME ZONE 'Etc/UTC'[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 41ms (Views: 31.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-07 12:34:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.6ms)

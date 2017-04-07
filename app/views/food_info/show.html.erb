@@ -43,10 +43,15 @@
 <p>Total Protein Intake: <%= @food_info_list.sum(:protein) %></p>
 <p>Total Fat: <%= @food_info_list.sum(:fat) %></p>
 
-<%= display_calorie_chart %>
+<%= calorie_chart_by_day %>
+<%= carb_chart_by_day %>
+<%= protein_chart_by_day %>
+<%= fat_chart_by_day %>
 
-<%= display_carb_chart %>
+<%= calorie_chart %>
 
-<%= display_protein_chart %>
+<%= carb_chart %>
 
-<%= display_fat_chart %>
+<%= protein_chart %>
+
+<%= fat_chart %>
