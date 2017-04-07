@@ -3073,3 +3073,1186 @@ puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
   Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
   Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.9ms)
+Started GET "/" for 127.0.0.1 at 2017-04-06 14:02:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:02:29 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 282ms (Views: 273.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:02:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:21:47 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:21:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.2ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:22:31 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:22:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:23:59 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.6ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:24:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.4ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:24:34 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.7ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:24:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.8ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:24:35 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.6ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:24:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (9.1ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:24:51 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 0..1)):
+    42: 	<% end %>
+    43: </table>
+    44: 
+    45: <%= column_chart FoodInfo.group(:food_item).sum(:protein,:fat), width:"300px", height:"400px",ytitle:"Protein (in grams)", xtitle:"Food item" %>
+  
+app/views/food_info/show.html.erb:45:in `_app_views_food_info_show_html_erb__1695031773403269268_69841304575560'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.6ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 14:25:58 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.5ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 37ms (Views: 30.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 14:25:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 16:37:06 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 82ms (Views: 79.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 16:37:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.1ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:03:34 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.6ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (116.0ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `food_info_list' for #<#<Class:0x007f0a5c0746e0>:0x007f0a5c0076d0>
+Did you mean?  @food_info_list):
+    51: 
+    52: <%= column_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" %>
+    53: 
+    54: <% food_info_list.each do |food_info|%>
+    55: 	<% total_calories += food_info.calories %>
+    56: <% end %>
+    57: <%= total_calories %>
+  
+app/views/food_info/show.html.erb:54:in `_app_views_food_info_show_html_erb__1695031773403269268_69841235045680'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.6ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:03:44 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    52: <%= column_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" %>
+    53: 
+    54: <% @food_info_list.each do |food_info|%>
+    55: 	<% total_calories += food_info.calories %>
+    56: <% end %>
+    57: <%= total_calories %>
+  
+app/views/food_info/show.html.erb:55:in `block in _app_views_food_info_show_html_erb__1695031773403269268_69841308368040'
+app/views/food_info/show.html.erb:54:in `_app_views_food_info_show_html_erb__1695031773403269268_69841308368040'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:09:05 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.9ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (11.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    52: <%= column_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" %>
+    53: 
+    54: <% @food_info_list.each do |food_info|%>
+    55: 	<% total_calories = total_calories + food_info.calories %>
+    56: <% end %>
+    57: <%= total_calories %>
+  
+app/views/food_info/show.html.erb:55:in `block in _app_views_food_info_show_html_erb__1695031773403269268_69841307490520'
+app/views/food_info/show.html.erb:54:in `_app_views_food_info_show_html_erb__1695031773403269268_69841307490520'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.3ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.2ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:17:12 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:17:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:27:00 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:27:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.9ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:34:18 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:34:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.7ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:38:33 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  Rendered food_info/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/samuel/food-tracker-app/app/views/food_info/show.html.erb:54: syntax error, unexpected ':', expecting ')'
+ffer.append=( Total Calories : @food_info_list.sum(:calories
+                              ^):
+  
+app/views/food_info/show.html.erb:54: syntax error, unexpected ':', expecting ')'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:38:48 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Calories):
+    51: 
+    52: <%= column_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" %>
+    53: 
+    54: <%= Total Calories - @food_info_list.sum(:calories) %>
+    55: <%= Total Protein intake : @food
+  
+app/views/food_info/show.html.erb:54:in `_app_views_food_info_show_html_erb__1695031773403269268_69841403798740'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:38:56 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.8ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (101.5ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `Calories' for #<#<Class:0x007f0a5c0746e0>:0x007f0a5cf18c50>):
+    51: 
+    52: <%= column_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" %>
+    53: 
+    54: <%= Total Calories @food_info_list.sum(:calories) %>
+    55: <%= Total Protein intake : @food
+  
+app/views/food_info/show.html.erb:54:in `_app_views_food_info_show_html_erb__1695031773403269268_69841242871020'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.7ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:40:25 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM(carbs) FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "carbs" does not exist
+LINE 1: SELECT SUM(carbs) FROM "food_infos"
+                   ^
+HINT:  Perhaps you meant to reference the column "food_infos.carb".
+: SELECT SUM(carbs) FROM "food_infos"):
+    53: 
+    54: <h3>Total Calories: <%= @food_info_list.sum(:calories) %></h3>
+    55: <h3>Total Protein Intake: <%= @food_info_list.sum(:protein) %></h3>
+    56: <h3>Total Carbs: <%= @food_info_list.sum(:carbs) %></h3>
+    57: <h3>Total Fat: <%= @food_info_list.sum(:fat) %></h3>
+  
+app/views/food_info/show.html.erb:56:in `_app_views_food_info_show_html_erb__1695031773403269268_69841307638320'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:40:32 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:40:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.6ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:42:05 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  Rendered food_info/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:42:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.8ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 17:42:28 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 17:42:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 18:08:04 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.2ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 34ms (Views: 27.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 18:08:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.4ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 18:11:54 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 39ms (Views: 26.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 18:11:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.0ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 18:13:02 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 36ms (Views: 30.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 18:13:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.1ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 18:15:00 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.7ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 18:15:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (8.6ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 18:23:00 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.4ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 36ms (Views: 30.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 18:23:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.7ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (7.5ms)
+Started GET "/food_info/show" for 127.0.0.1 at 2017-04-06 19:11:04 -0400
+Processing by FoodInfoController#show as HTML
+  Rendering food_info/show.html.erb within layouts/application
+  [1m[36mFoodInfo Load (0.3ms)[0m  [1m[34mSELECT "food_infos".* FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") FROM "food_infos"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") FROM "food_infos"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."calories") AS sum_calories, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."carb") AS sum_carb, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."protein") AS sum_protein, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("food_infos"."fat") AS sum_fat, "food_infos"."food_item" AS food_infos_food_item FROM "food_infos" GROUP BY "food_infos"."food_item"[0m
+  Rendered food_info/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/food_info/data" for 127.0.0.1 at 2017-04-06 19:11:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/food_info/data"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.9ms)

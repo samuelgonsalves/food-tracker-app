@@ -1,7 +1,3 @@
-<h3>
-	
-</h3>
-
 <table>
 	<tr>
 		<td>
@@ -42,4 +38,15 @@
 	<% end %>
 </table>
 
-<%= column_chart FoodInfo.group(:food_item).sum(:protein), width:"300px", height:"400px",library:{yAxis:{title:{text: 'Protein'}}} %>
+<p>Total Calories: <%= @food_info_list.sum(:calories) %></p>
+<p>Total Carbs: <%= @food_info_list.sum(:carb) %></p>
+<p>Total Protein Intake: <%= @food_info_list.sum(:protein) %></p>
+<p>Total Fat: <%= @food_info_list.sum(:fat) %></p>
+
+<%= display_calorie_chart %>
+
+<%= display_carb_chart %>
+
+<%= display_protein_chart %>
+
+<%= display_fat_chart %>
