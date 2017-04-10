@@ -26,4 +26,7 @@ module FoodInfoHelper
 		line_chart FoodInfo.group_by_day(:created_at, series: false).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" 	
 	end
 	
+	def top_calorific_foods
+		FoodInfo.order(:calories).last(2)
+	end
 end

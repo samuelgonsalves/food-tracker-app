@@ -28,6 +28,14 @@
 	<% end %>
 </table>
 
+<p>Top calorific items: </p>
+<ul style="list-style:none">
+
+<% top_calorific_foods.each do |food| %>
+	<li><%= food.food_item %>
+<% end %>
+</ul>
+
 <p>Total Calories: <%= @food_info_list.sum(:calories) %></p>
 <p>Total Carbs: <%= @food_info_list.sum(:carb) %></p>
 <p>Total Protein Intake: <%= @food_info_list.sum(:protein) %></p>
