@@ -1,4 +1,7 @@
 module FoodInfoHelper
+
+#Creates charts
+
 	def calorie_chart
 		line_chart FoodInfo.group(:food_item).sum(:calories), width:"500px", height:"400px",ytitle:"Calories", xtitle:"Food"  
 	end
@@ -12,6 +15,7 @@ module FoodInfoHelper
 		line_chart FoodInfo.group(:food_item).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food"
 	end
 
+#Creates charts that are grouped by day
 
 	def calorie_chart_by_day
 		line_chart FoodInfo.group_by_day(:created_at, series: false).sum(:calories), width:"300px", height:"400px",ytitle:"Calories", xtitle:"Food" 	
@@ -26,6 +30,7 @@ module FoodInfoHelper
 		line_chart FoodInfo.group_by_day(:created_at, series: false).sum(:fat), width:"300px", height:"400px",ytitle:"Fat (in grams)", xtitle:"Food" 	
 	end
 	
+#Returns the top calorific food eaten any time (not by day)
 	def top_calorific_foods
 		FoodInfo.order(:calories).last(2)
 	end
